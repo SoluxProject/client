@@ -1,0 +1,195 @@
+.ToDo {
+  width: 512px;
+  height: 768px;
+
+  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+
+  margin: 0 auto; /* 페이지 중앙에 나타나도록 설정 */
+
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoHeadBlock {
+  padding-top: 48px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.TodoHeadBlock h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #343a40;
+}
+
+.TodoHeadBlock .day {
+  margin-top: 4px;
+  color: #868e96;
+  font-size: 21px;
+}
+
+.TodoHeadBlock .tasks-left {
+  color: #456268;
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.InsertForm {
+  background: #f8f9fa;
+  padding-left: 32px;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 72px;
+
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.InsertFormPositioner {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.CircleButton {
+  background: #456268;
+  
+
+  z-index: 5;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 50%);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+
+  transition: 0.125s all ease-in;
+}
+
+.CircleButton :hover {
+  opacity: 0.5;
+}
+
+.Input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.ToDoScroll {
+  overflow: scroll;
+  margin-bottom: 160px; 
+  text-align: left;
+}
+
+#ToDoSet {    
+  display: inline-flex;
+  text-align: left;
+  margin-bottom: 30px;
+}  
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 3px solid #456268;
+  position: relative;
+  top: 15px;
+  margin-left: 70px;
+  margin-right: 20px;
+}
+
+
+.EditButton {
+  color: #456268;
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+
+  position: relative;
+  
+   
+}
+
+.EditButton :hover {
+  opacity: 0.5;
+}
+
+.deleteBtn{
+  background: transparent;
+  opacity: 1;
+  border: transparent; 
+  margin-right: 30px;
+}
+.deleteImg{
+  height: 20px;
+  width: 20px;
+  
+  
+}
+
+.deleteBtn :hover{
+  opacity: 0.5;
+}
+
+
+
+.ToDoContent {
+  width: 120px; 
+  margin-top: 10px;
+}
+
+ 
+
+.CheckContent {
+  display: inline-flex;
+  position:relative;
+}
+
+
+.EditToDo {
+  position: relative;
+  top: +5px;   
+
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  width: 100px;
+  height: 50px;  
+  outline: none;
+  font-size: 13px;
+  box-sizing: border-box;
+  margin-left: 18px;
+}
+
+.EditDelete {
+  /* background-color: yellow;   */
+  display: inline-flex;
+  position: relative;
+}
