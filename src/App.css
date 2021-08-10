@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap');
+.App {
+  text-align: center;
+  
+}
+
+* {
+  font-family: 'Noto Serif KR', serif;
+}
+ 
+
+/* Global */
+:root { 
+  /* Color */
+  --color-beige: #fcf8ec;
+  --color-light-blue: #d0e8f2; 
+  --color-medium-blue: #79a3b1;
+  --color-dark-blue: #456268;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Annimation */
+  --animation-duration: 300ms;
+}
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.column {
+  flex-direction: column;
+}
+header {
+  padding: 10px;
+  background-color: #456268;
+  justify-content: flex-end;
+  align-items: center;
+}
+header > div {
+  justify-content: center;
+}
+#day {
+  overflow: auto;
+  background-color: white;
+  width: 250px;
+  height: 80px;
+  margin-right: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#dday {
+  margin: 10px 5px;
+}
+#calendar {
+  color: #456268;
+}
+#dayLeft {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 3px;
+  color: #FB475E;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #A0E7E5;
+}
+#content {
+  font-size: 15px;
+  margin: 0px 8px;
+}
+
+#login {
+  margin-right: 30px;
+}
+#box {
+  width: 40px;
+  height: 40px;
+  border-radius: 70%;
+  background-color: white;
+  overflow: hidden;
+}
+#profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#button {
+  margin-top: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+#login > a {
+  text-decoration: none;
+  color: white;
+}
+#login #button {
+  color: white;
+}
+nav {
+  background-color: #D0E8F2;
+  padding:10px 0px;
+  margin: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+nav .item {
+  border-radius: 5px;
+  background-color: #456268;
+  padding: 8px;
+  width: 250px;
+  justify-content: center;
+}
+nav > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+nav h4 {
+  margin: 0;
+}
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+/* Section Common */
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+  position: static;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+  
+}
+
+
+
+/* Summary */
+
+#summary {
+  width: 100vw;
+  background-color: var(--color-beige);
+}
+
+
+
+.summary__set {
+  display: flex;
+  justify-content: center;
+
+}
+
+.summary__set h1{
+  text-align: left;
+}
+
+.summary__set .study__note {
+  text-align: left;
+
+}
+.summary__left {
+  margin-left: 20px;
+  margin-right: 50px; 
+}
+
+.summary__right {
+  margin-left: 60px; 
+  margin-right: 50px;
+}
+
+.study__note {
+  width: 400px;
+  height: 250px; 
+  border: 1px solid none;
+  border-radius: 10px;
+  margin-bottom: 20px; 
+  margin-right: 100px;
+  background-color: white
+}
+
+.to__do{
+  overflow:scroll;
+  width: 400px;
+  height: 180px; 
+  border: 1px solid none;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px; 
+  margin-right: 100px;
+  background-color: white;
+}
+ 
+
+#ToDoSet {    
+  display: inline-flex;
+  text-align: right; 
+  margin-bottom: 30px;
+
+  width: 400px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 18px;
+}  
+
+.ranking {
+  width: 400px;
+  height: 180px; 
+  border: 1px solid none;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px; 
+  margin-right: 100px;
+  background-color: white;
+}
+
+
+.study__note p {
+  padding: 20px;
+  margin-left: 20px; 
+}
+
+.rank__detail {
+  margin-bottom: 20px;
+}
+
+.rank__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(—color-dark-blue);
+}
+
+.rank__value {
+  height: 3px;
+  background-color: orange;
+}
+
+#userHomeID {
+  color: #fcf8ec;
+}
