@@ -7,6 +7,8 @@ import Todo from './component/Todo';
 import Dday from './component/Dday';
 import Search from './component/Search';
 import Dailynote from './component/Dailynote';
+import MyPage from './component/MyPage';
+import EditMyPage from './component/EditMyPage';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/dday" component={Dday} />
           <Route exact path="/dailynote" component={Dailynote} />
           <Route exact path="/auth/search" component={Search} />
+          <Route exact path="/mypage" component={MyPage}/>
+          <Route exact path="/editMyPage" component={EditMyPage}/>
       </div>
     </BrowserRouter>
   );
