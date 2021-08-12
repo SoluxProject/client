@@ -5,23 +5,30 @@ import { useState } from 'react';
 import Axios from 'axios';
 
 function SignUp() {
-
   const [name, setName] = useState('');
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+  const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
   const [major, setMajor] = useState('');
 
   const submitSignUp = () => {
     Axios.post('join', {
-      name: name,
       id: id,
       pw: pw, 
       email: email,
-      major: major
+      major: major,
+      name: name,
+      tel: tel,
     }).then(res => {
-      console.log(res);
-      alert(res.data)
+      if(res.data.success) {
+        console.log(res.data);
+        alert(res.data.message);
+        window.location.href="/auth/login";
+      }
+      else {
+        alert(res.data.message);
+      }
     });
   };
 
@@ -53,7 +60,13 @@ function SignUp() {
                           setPw(e.target.value);
                         }}/>
                         
-                    </div>  
+                    </div>
+                    <div className="signup-form-floating signup-mb-3">
+                        <input className="input-signup" id="tel" type="text" placeholder="Tel" title="숫자만 입력 (ex.01012345678)" onChange={(e) => {
+                          setTel(e.target.value);
+                        }}/>
+                       
+                    </div> 
                     <div className="signup-form-floating signup-mb-3">
                         <input className="input-signup" id="email" type="text" placeholder="email" onChange={(e) => {
                           setEmail(e.target.value);
@@ -66,9 +79,9 @@ function SignUp() {
                         }}/>
                         
                     </div> 
-                    <Link to="/auth/login">
-                      <button className="signup-btn" id="signUp-Button" onClick={submitSignUp}>회원가입하기</button> 
-                    </Link>
+                    {/* <Link to="/auth/login"> */}
+                      <button type="button" className="signup-btn" id="signUp-Button" onClick={submitSignUp}>회원가입하기</button> 
+                    {/* </Link> */}
                     
                 </form>
            
