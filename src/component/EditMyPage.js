@@ -4,7 +4,7 @@ import axios from "axios";
 import { RiEdit2Fill } from "react-icons/ri";
 
 export default function EditMyPage({location}){
-    
+    console.log("");
     const id=location.state.id;
     const name=location.state.name;
     const pw=location.state.pw;
@@ -27,7 +27,7 @@ export default function EditMyPage({location}){
         []
     );
 
-    const editEmail=(id, {data})=>{
+    {/*const editEmail=(id, {data})=>{
         console.log(data);
         axios.post('/mypage/changeEmail',{
             id:id,
@@ -43,7 +43,7 @@ export default function EditMyPage({location}){
             newMajor:data,
         })
     }
-    
+*/}
     return(
         <div className="EditMyPage">
             <div className="EditMyPageTitle">
@@ -66,11 +66,11 @@ export default function EditMyPage({location}){
                         </div>
                         <div className="EditMyPageInputBtn">
                             <input value={newEmail} onChange={changeEmail}></input>
-                            <button className="EditMyPageEditBtn" onClick={editEmail(id, newEmail)}><RiEdit2Fill /></button>
+                            {/*<button className="EditMyPageEditBtn" onClick={editEmail(id, newEmail)}><RiEdit2Fill /></button>*/}
                         </div>
                         <div className="EditMyPageInputBtn">
                             <input value={newMajor} onChange={changeMajor}></input>
-                            <button className="EditMyPageEditBtn" onClick={editMajor(id, newMajor)}><RiEdit2Fill /></button>
+                            {/*<button className="EditMyPageEditBtn" onClick={editMajor(id, newMajor)}><RiEdit2Fill /></button>*/}
                         </div>
                 
                     </div>
