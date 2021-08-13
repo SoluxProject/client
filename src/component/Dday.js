@@ -14,6 +14,7 @@ export default function Dday(){
     day: 'numeric'
     });
     const dayName = today.toLocaleDateString('ko-KR', { weekday: 'long' });
+    const [ddayListExist, setDdayListExist] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     const [index, setIndex] = useState(-1);
 
@@ -28,6 +29,32 @@ export default function Dday(){
     const [newDate, setNewDate] = useState(0);
     const [newDday, setNewDday] = useState('');
 
+    useEffect(() => {
+        Axios.get("/dday/list")
+        .then(res => {
+            showDdayList(res);
+        })
+      }, []);
+
+    const showDdayList = (res) => {
+        if(res.data.success===undefined) {
+            setDdayListExist(true);
+            setDdayList(res.data);
+        }
+        else {
+            setDdayListExist(false);
+            alert(res.data.message);
+        }
+    };
+
+    const calDday = (dday) => {
+        var today = new Date();
+        var dday = new Date(Date.parse(dday));
+        var gap = dday.getTime() - today.getTime();
+        var result = Math.ceil(gap/(1000*60*60*24));
+        return result+1;
+    };
+
     const EditDdayBtn=(val)=>{
         if (isEdit ===false){
             setIsEdit(true);
@@ -37,17 +64,22 @@ export default function Dday(){
             setIsEdit(false);
             setIndex(-1);
         }
-
     };
 
     const changeDate = (idx) => {
         Axios.post('/dday/changeDate', {
             idx: idx,
             date: new Date(newYear, newMonth-1, newDate),
-        }).then(res => {
-            setIsEdit(false);
-            setIndex(-1);
-            setDdayList(res.data);
+        })
+        .then(res => {
+            if(!res.data.success && res.data.message==='dday 날짜 수정 오류'){
+                alert(res.data.message);
+            }
+            else {
+                setIsEdit(false);
+                setIndex(-1);
+                showDdayList(res);
+            }
         });
 
         setNewYear(0);
@@ -59,29 +91,20 @@ export default function Dday(){
         Axios.post('/dday/changeCont', {
             idx: idx,
             content: newDday,
-        }).then(res => {
-            setIsEdit(false);
-            setIndex(-1);
-            setDdayList(res.data);
+        })
+        .then(res => {
+            if(!res.data.success && res.data.message==='dday 내용 수정 오류'){
+                alert(res.data.message);
+            }
+            else {
+                setIsEdit(false);
+                setIndex(-1);
+                showDdayList(res);
+            }
         });
 
         setNewDday('');
-    }
-    
-    useEffect(() => {
-        Axios.get("/dday/list")
-        .then(res => {
-          setDdayList(res.data);
-        })
-      }, []);
-
-    const calDday = (dday) => {
-        var today = new Date();
-        var dday = new Date(Date.parse(dday));
-        var gap = dday.getTime() - today.getTime();
-        var result = Math.ceil(gap/(1000*60*60*24));
-        return result+1;
-    }
+    };
     
     const submitDday = () => {
         Axios.post("/dday/insert", {
@@ -90,26 +113,35 @@ export default function Dday(){
              content: dday,
          })
          .then(res => {
-            console.log(res.data);
-            setDdayList(res.data);
-         }).then(()=>{
+            if(!res.data.success && res.data.message==='dday insert 오류') {
+                alert(res.data.message);
+            }
+            else{
+                showDdayList(res);
+            }
+         })
+         .then(()=>{
             setYear(0);
             setMonth(0);
             setDate(0);
             setDday('');
          })
-         
-       };
+    };
 
     const deleteDday = (idx) => {
         if(window.confirm('삭제하시겠습니까?')) {
-        Axios.post('/dday/delete', {
-          index: idx,
-        })
-        .then(res => {
-          setDdayList(res.data);
-        });
-      };
+            Axios.post('/dday/delete', {
+            index: idx,
+            })
+            .then(res => {
+                if(!res.data.success && res.data.message==='dday delete 오류') {
+                    alert(res.data.message);
+                }
+                else{
+                    showDdayList(res);
+                }
+            });
+        }
     };
 
     return (
@@ -134,41 +166,50 @@ export default function Dday(){
             <button className="CircleButton" onClick={submitDday}>
                 <MdAdd />
             </button>
-            <div className="DdayScroll">
-                {ddayList.map((val) => {
-                return( 
-                        <div key={val.index} className="DdaySet">
-                            {calDday(val.date)>=0 ? 
-                            (<p className="Ddayday">D-{calDday(val.date)}</p>) :
-                            (<p className="Ddayday">D+{calDday(val.date) * (-1)}</p>)
-                            }
-                            <p className="DdayContent">{val.content}</p> 
-                            <button className="DdayEditButton" onClick={() => {EditDdayBtn(val)}} >
-                                <RiEdit2Fill />
-                            </button>
-                            <button className="DdaydeleteBtn" onClick={() => {deleteDday(val.index);}}>
-                                <img src="img/delete.png" className="deleteImg"></img>
-                            </button>
-                            {isEdit && (index === val.index) && 
-                                (
-                                    <div className="child">
-                                        <input className="EditDday" id="EditYear" placeholder="년" onChange = {(e) => {setNewYear(Number(e.target.value))}} />
-                                        <input className="EditDday" id="EditMonth" placeholder="월" onChange = {(e) => {setNewMonth(Number(e.target.value))}} />
-                                        <input className="EditDday" id="EditDay" placeholder="일" onChange = {(e) => {setNewDate(Number(e.target.value))}} />
-                                        <button className="DdayEditButton" onClick = {() => {changeDate(val.index)}}>
-                                            <AiOutlineCheckCircle />
-                                        </button>
-                                        <input className="EditDdayContent" placeholder="일정" onChange = {(e) => {setNewDday(e.target.value)}} />
-                                        <button className="DdayEditButton" onClick = {() => {changeCont(val.index)}}>
-                                            <AiOutlineCheckCircle />
-                                        </button>
-                                    </div>
-                                )
-                            }
-                        </div>
-                )})
-                }
-            </div>
+            {ddayListExist ?
+            (
+                <div className="DdayScroll">
+                    {ddayList.map((val) => {
+                    return( 
+                            <div key={val.index} className="DdaySet">
+                                {calDday(val.date)>=0 ? 
+                                (<p className="Ddayday">D-{calDday(val.date)}</p>) :
+                                (<p className="Ddayday">D+{calDday(val.date) * (-1)}</p>)
+                                }
+                                <p className="DdayContent">{val.content}</p> 
+                                <button className="DdayEditButton" onClick={() => {EditDdayBtn(val)}} >
+                                    <RiEdit2Fill />
+                                </button>
+                                <button className="DdaydeleteBtn" onClick={() => {deleteDday(val.index);}}>
+                                    <img src="img/delete.png" className="deleteImg"></img>
+                                </button>
+                                {isEdit && (index === val.index) && 
+                                    (
+                                        <div className="child">
+                                            <input className="EditDday" id="EditYear" placeholder="년" onChange = {(e) => {setNewYear(Number(e.target.value))}} />
+                                            <input className="EditDday" id="EditMonth" placeholder="월" onChange = {(e) => {setNewMonth(Number(e.target.value))}} />
+                                            <input className="EditDday" id="EditDay" placeholder="일" onChange = {(e) => {setNewDate(Number(e.target.value))}} />
+                                            <button className="DdayEditButton" onClick = {() => {changeDate(val.index)}}>
+                                                <AiOutlineCheckCircle />
+                                            </button>
+                                            <input className="EditDdayContent" placeholder="일정" onChange = {(e) => {setNewDday(e.target.value)}} />
+                                            <button className="DdayEditButton" onClick = {() => {changeCont(val.index)}}>
+                                                <AiOutlineCheckCircle />
+                                            </button>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                    )})
+                    }
+                </div>
+            ) :
+            (
+                <div className="DdayScroll">
+                    <div className="DdaySet" />
+                </div>
+            )
+            }
         </div>
     </div>
     );
