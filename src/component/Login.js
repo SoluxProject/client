@@ -2,33 +2,28 @@ import "../Login.css";
 import React, {useState} from 'react';
 import Axios from "axios";
 import {Link} from 'react-router-dom';
-import {useHistory} from "react-router-dom";
 
 function Login() {
   const [id, setId] = useState("");
   const[pw, setPw] = useState("");
 
-  let history = useHistory();
-
-  const submit = (e) => {
-    e.preventDefault();
+  const submit = () => {
     Axios.post("/auth/login", null, {
     params: {
       'id': id,
       'pw': pw,
     }
   })
-  
   .then(res => {
     console.log(res.data);
-    alert(res.data);
-    window.location.href = "/";
-    // history.push(`/${res.data}`);
-    // history.push("/");
-  })
-  // .then(history.push("/"));
-  
-  //.then(window.location.href = "/");
+    if(res.data.success) {
+      alert(res.data.message);
+      window.location.href = '/';
+    }
+    else {
+      alert(res.data.message);
+    }
+  });
 };
 
 return (
@@ -58,13 +53,13 @@ return (
                         }}
                         />
                       </div>
-                      <button className="login-btn" style={{ width:312.594, marginBottom: '10px', textDecoration: 'none'}} onClick={submit}>로그인</button>
+                      <button className="login-btn" type="button" style={{ width:312.594, marginBottom: '10px', textDecoration: 'none'}} onClick={submit}>로그인</button>
                       <br></br>
                       <Link to='/auth/search'>
-                        <button className="login-btn" type="submit">ID/PW 찾기</button>
+                        <button className="login-btn" type="button">ID/PW 찾기</button>
                       </Link>
                       <Link to="/auth/join">
-                        <button className="login-btn">회원가입</button>
+                        <button className="login-btn" type="button">회원가입</button>
                       </Link>
                     </form>
                   </div>
