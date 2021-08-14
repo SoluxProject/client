@@ -33,6 +33,7 @@ export default function MyPage(){
                         <div>아이디</div>
                         <div>이메일</div>
                         <div>전공</div>
+                        <div>전화번호</div>
                     </div>
 
                     <div className="MyPageUserContent">
@@ -40,6 +41,7 @@ export default function MyPage(){
                         <div>{user.id}</div>
                         <div>{user.email}</div>
                         <div>{user.major}</div>
+                        <div>{user.tel}</div>
                     </div> 
                 </div>
                 
@@ -51,7 +53,8 @@ export default function MyPage(){
                             id:user.id,
                             pw:user.pw,
                             email:user.email,
-                            major:user.major
+                            major:user.major,
+                            tel: user.tel
                         }
                     }}>
                         <button className="MyPageBtn MyPageEditBtn">회원정보 수정</button>
