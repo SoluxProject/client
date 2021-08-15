@@ -9,6 +9,7 @@ import Search from './component/Search';
 import Dailynote from './component/Dailynote';
 import MyPage from './component/MyPage';
 import EditMyPage from './component/EditMyPage';
+import Timer from './component/Timer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/auth/search" component={Search} />
           <Route exact path="/mypage" component={MyPage}/>
           <Route exact path="/editMyPage" component={EditMyPage}/>
+          <Route exact path="/timer" component={Timer} />
       </div>
     </BrowserRouter>
   );

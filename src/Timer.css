@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+.Timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.timer-set {
+    width: 70%;
+    margin: 60px 0px;
+    margin-bottom: 50px;
+    padding: 40px;
+    padding-top: 20px;
+    background-color: #456268;
+    background: linear-gradient( to right, #5d8c96, #25383a );
+}
+.dayRecord-set {
+    text-align: left;
+    width: 70%;
+}
+.dayRecord-bar {
+    border-bottom: 1.5px solid #456268;
+    padding: 8px;
+    padding-left: 20px;
+}
+.dayRecord-list {
+    border-bottom: 1.5px solid #456268;
+    padding: 8px;
+    padding-left: 20px;
+}
+.dayRecord-bar > span {
+    margin: 61px;
+}
+.dayRecord-list > span {
+    margin: 40px;
+}
+.time {
+    margin: 15px 0px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+.control {
+    padding: 0px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.control-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
