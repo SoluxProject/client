@@ -60,8 +60,9 @@ export default function MyPage(){
                         <button className="MyPageBtn MyPageEditBtn">회원정보 수정</button>
                      
                 </Link>
-                    
-                    <button className="MyPageBtn MyPageExamBtn">시험일정 관리</button>
+                    <Link to="/examDday">
+                        <button className="MyPageBtn MyPageExamBtn">시험일정 관리</button>
+                    </Link>
                     <button className="MyPageBtn MyPageTimeBtn">공부시간 관리</button>
                 </div>
             </div>
