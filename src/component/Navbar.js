@@ -46,7 +46,7 @@ function Navbar(props) {
                     </Link>)
                     }
                     {(thisPage !== "Timer") &&
-                    (<Link to="/">
+                    (<Link to="/timer">
                         <li>
                             TIMER
                         </li>
