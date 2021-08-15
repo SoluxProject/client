@@ -3,6 +3,7 @@ import React , {useState, useEffect,useCallback} from 'react';
 import axios from "axios";
 import { RiEdit2Fill } from "react-icons/ri";
 import { FaCrown } from "react-icons/fa";
+import MyPageNavbar from "./MyPageNavbar";
 
 export default function EditMyPage({location}){
     
@@ -84,6 +85,9 @@ export default function EditMyPage({location}){
     }
     return(
         <div className="EditMyPage">
+            
+            <MyPageNavbar></MyPageNavbar>
+            <div className="EditMyPageMainContent">
             <div className="EditMyPageTitle">
                     <h1>회원정보 수정</h1>
             </div>
@@ -118,6 +122,8 @@ export default function EditMyPage({location}){
                 
                     </div>
             </div>
+            </div>
+            
         </div>
     )
 }

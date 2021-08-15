@@ -6,14 +6,20 @@
 .EditMyPage{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+}
+.EditMyPageMainContent{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .EditMyPageUser{
     display: flex;
     flex-direction: row;
-    margin-top: 45px;   
+    justify-content: center;
+    margin-top: 60px;   
     font-size: 18px;
 }
 .EditMyPageContent {

@@ -10,6 +10,7 @@ import Dailynote from './component/Dailynote';
 import MyPage from './component/MyPage';
 import EditMyPage from './component/EditMyPage';
 import Timer from './component/Timer';
+import ExamDday from './component/ExamDday';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/mypage" component={MyPage}/>
           <Route exact path="/editMyPage" component={EditMyPage}/>
           <Route exact path="/timer" component={Timer} />
+          <Route exact path="/examDday" component={ExamDday}/>
       </div>
     </BrowserRouter>
   );
