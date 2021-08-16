@@ -16,6 +16,8 @@ function Home() {
   const [ddayExist, setDdayExist] = useState(false);
   const [ddayMsg, setDdayMsg] = useState('');
 
+  const [dailynoteList, setDailynoteList] = useState([]);
+
   const [token, setToken, removeToken] = useCookies(["loginToken"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -39,6 +41,11 @@ function Home() {
         setTodoExist(false);
         setTodoMsg(res.data.message);
       }
+    });
+
+    Axios.get("/dailynote/list") 
+    .then(res => {
+      setDailynoteList(res.data);
     });
 
     Axios.get("/dday/list")
@@ -210,7 +217,25 @@ function Home() {
                     <div className="summary__left">
                       <h1>[Study Note]</h1>
 
-                      <div className="study__note">
+                      <div className="homeNotes">
+                        {dailynoteList.map((val) => {
+                          return ( 
+                            <div key={val.index} className="box">
+                              <div className="subjectDate">
+                                <div className="homeSubject">{val.subject}</div>  
+                                <div className="homeDate">{new Date(val.date).toDateString()}</div>
+                              </div>
+
+                              <div className="content">
+                                <div className="homeContent">{val.content}</div>
+                                
+                              </div>
+                            </div> 
+                          )
+                        })} 
+                      </div>
+
+                      {/* <div className="study__note">
                         <p>7월 11일 | 알고리즘</p>
                         <p>
                           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -227,7 +252,7 @@ function Home() {
                           velit excepturi deleniti, accusamus laboriosam placeat, natus
                           sit! Suscipit, vero! Saepe totam molestias harum. Tempore.{" "}
                         </p>
-                      </div>
+                      </div> */}
                        
                     </div>
                     <div className="summary__right">

@@ -267,3 +267,105 @@ body {
 #userHomeID {
   color: #fcf8ec;
 }
+
+
+.homeNotes {
+  /* background-color: aquamarine; */
+  width: 90%;
+  height: 720px;
+  /* background-color: #d0e8f2; */
+  /* overflow: scroll;    */ 
+  overflow: scroll;
+  
+}
+
+
+/*  */
+.box {
+  background-color: white;
+  margin-bottom: 10px;
+  /* margin-left:5px; */
+  margin-right: 80px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+  
+  width: 500px;
+  /* display: inline-flex; */
+  /* position: relative; */
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+
+.valSubject {
+  /* border-right: 3px solid #dee2e6; */
+  /* background-color: #dee2e6; */
+  opacity: 0.8;
+  width: 150px;
+  font-size: 20px;
+}
+
+.subjectText {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.contentDate {
+  width: 450px;
+  /* background-color: burlywood; */
+}
+
+.valContent {
+  /* background-color: pink; */
+  padding: 20px;
+  border-bottom: 3px solid #dee2e6;
+
+}
+
+.valDate {
+  padding: 10px;
+  padding-left: 20px;
+
+  /* background-color: plum; */
+  
+}
+
+.homeSubject {
+  /* background-color: peru; */
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 300px;
+  font-size: 24px;
+}
+
+.homeDate {
+  /* background-color: yellowgreen;  */
+  margin-top: 22px;
+  width: 200px;
+}
+
+
+.subjectDate {
+  display: inline-flex;
+  position: relative;
+  /* background-color: plum; */
+}
+
+.content {
+  background-color: hsl(213, 18%, 90%); 
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;  
+  border-radius: 6px;
+}
+
+ 
+.homeContent { 
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+}
