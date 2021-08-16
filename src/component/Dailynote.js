@@ -79,7 +79,7 @@ function Dailynote() {
   return (
     <div className="wrapper">
       <div className="navbar">
-        <Navbar page="Todo"/>
+        <Navbar page="DailyNote"/>
       </div>
       <div className="leftright">
         <div className="dailynoteleft">

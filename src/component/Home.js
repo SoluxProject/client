@@ -18,6 +18,8 @@ function Home() {
 
   const [dailynoteList, setDailynoteList] = useState([]);
 
+  const [timerWeekRank, setTimerWeekRank] = useState([]);
+
   const [token, setToken, removeToken] = useCookies(["loginToken"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -65,6 +67,13 @@ function Home() {
       else {
         setDdayExist(false);
         setDdayMsg(res.data.message);
+      }
+    });
+
+    Axios.get('/timerWeek/rank')
+    .then(res => {
+      if(res.data.success) {
+        setTimerWeekRank(res.data.data);
       }
     });
 
@@ -201,12 +210,21 @@ function Home() {
                         </a>
                       )
                     }
-                    
-                    <a href="" target="_self">
-                      <div className="item">
-                        <h4>TIMER</h4>
-                      </div>
-                    </a>
+                    {isLoggedIn ? 
+                      (
+                        <Link to = '/timer'>
+                          <div className="item">
+                            <h4>TIMER</h4>
+                          </div>
+                        </Link> ) :
+                      (
+                        <a onClick={alertMsg}>
+                          <div className="item">
+                            <h4>TIMER</h4>
+                          </div>
+                        </a>
+                      )
+                    }
                   </nav>
                 </div>
               </section>
@@ -281,35 +299,28 @@ function Home() {
                         )
                       }
 
-                      <h1>[Today's ranking]</h1>
+                      <h1>[Today's ranking]</h1>                    
                       <div className="ranking">
-                        <div className="rank__detail">
-                          <div className="rank__name">
-                            <span>Iron Man</span>
-                            <span>4 hours</span>
-                          </div>
-                          <div className="rank__bar">
-                            <div className="rank__value" style={{ width: "40%" }}></div>
-                          </div>
-                        </div>
-                        <div className="rank__detail">
-                          <div className="rank__name">
-                            <span>Doctor Stranger</span>
-                            <span>7 hours</span>
-                          </div>
-                          <div className="rank__bar">
-                            <div className="rank__value" style={{ width: "70%" }}></div>
-                          </div>
-                        </div>
-                        <div className="rank__detail">
-                          <div className="rank__name">
-                            <span>Black Widow</span>
-                            <span>9 hours</span>
-                          </div>
-                          <div className="rank__bar">
-                            <div className="rank__value" style={{ width: "90%" }}></div>
-                          </div>
-                        </div>
+                        {timerWeekRank.map((val, index) => {
+                          const  style = {
+                            width: `${(val.recordWeek/timerWeekRank[0].recordWeek) * 100}%`,
+                          }
+                          const hour = parseInt((val.recordWeek/60)/60);
+                          const minute = parseInt((val.recordWeek/60)%60);
+                          const second = parseInt(val.recordWeek%60);
+                          return (
+                            <div key={index} className="rank__detail">
+                              <div className="rank__name">
+                                <span>{val.timerWeekid}</span>
+                                <span id="rank_time">{hour<10 ? `0${hour}` : hour} : {minute<10 ? `0${minute}` : minute} : {second<10 ? `0${second}` : second}</span>
+                              </div>
+                              <div className="rank__bar">
+                                <div className="rank__value" style={style}></div>
+                              </div>
+                            </div>
+                          )})
+                        }
+                        
                       </div>
                     </div>
                   </div>
