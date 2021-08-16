@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
   }
-  .ExamDdayInsertForm {
+  .ExamInsertForm {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,10 +28,10 @@
     padding: 12px;
     border-radius: 4px;
     border: 1px solid #dee2e6;
-    width: 70%;
+    margin-left: 15px;
     outline: none;
     font-size: 18px;
-    margin-left: 45px;
+    width: 60%;
   }
   .ExamInputDay{
     padding: 12px;
@@ -42,6 +42,7 @@
     font-size: 18px;
     margin-left: 10px;
   }
+  
   .ExamDdayHeadBlock{
     padding-top: 48px;
     padding-left: 32px;
@@ -66,19 +67,25 @@
     flex-direction: row;
     margin-bottom: 20px;
     margin-top: 10px;
+    margin-left: 35px;
     align-items: center;
     padding-left: 15px;
     position: relative;
   }
-  .ExamContentday .ExamContentMonth{
-    margin-left : 30px;
-    margin-right: 30px;
+  .ExamContentDay {
     font-weight: bold;
     font-size: 18px;
+    width:18px;
+  }
+  .ExamContentMonth{
+    
+    font-weight: bold;
+    font-size: 18px;
+    width:18px;
   }
   .ExamDdayContent{
     margin-left: 20px;
-    width: 235px;
+    width: 275px;
     padding-top: 1px;
   }
   .ExamEditButton {
@@ -112,4 +119,17 @@
   
   .ExamdeleteBtn :hover{
     opacity: 0.5;
+  }
+  #EditExamDay{
+
+  }
+  .Examchild{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    background-color: white;
+    width: 480.333px;
+    height: 60px;
   }
