@@ -1,242 +1,246 @@
 .AddNote {
-    /* width: 512px; */
-    height: 700px;
-  
-    position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
-  
-    /* margin: 0 auto; 페이지 중앙에 나타나도록 설정 */
-  
-    margin-top: 20px;
-    margin-bottom: 32px;
-    display: flex;
-    flex-direction: column;
+  /* width: 512px; */
+  height: 700px;
 
-    width: 40%;
-    float: right;
-    margin-right: 20px;
-  }
-  
-  .TodoHeadBlock {
-    padding-top: 48px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e9ecef;
-  }
-  
-  .TodoHeadBlock h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #343a40;
-  }
-  
-  .TodoHeadBlock .day {
-    margin-top: 4px;
-    color: #868e96;
-    font-size: 21px;
-  }
-  
-  .TodoHeadBlock .tasks-left {
-    color: #456268;
-    font-size: 18px;
-    margin-top: 40px;
-    font-weight: bold;
-  }
-  
-  .InsertForm {
-    background: #f8f9fa;
-    padding-left: 32px;
-    padding-top: 32px;
-    padding-right: 32px;
-    padding-bottom: 72px;
-  
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    border-top: 1px solid #e9ecef;
-  }
-  
-  .InsertFormPositioner {
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-  }
-  
-  .addbtn {
-    background: #456268;
-    
-  
-    z-index: 5;
-    cursor: pointer;
-    width: 150px;
-    height: 80px;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    transform: translate(-50%, 50%);
-    color: white;
-    border-radius: 40px;
+  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
-    border: none;
-    outline: none;
-  
-  
-    transition: 0.125s all ease-in;
-  }
-  
-  .CircleButton :hover {
-    opacity: 0.5;
-  }
-  
-  .Input {
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #dee2e6;
-    width: 100%;
-    outline: none;
-    font-size: 18px;
-    box-sizing: border-box;
-  }
 
-  .inputNote {
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #dee2e6;
-    width: 80%;
-    height: 300px;
-    outline: none;
-    font-size: 18px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+  margin: 0 auto; /* 페이지 중앙에 나타나도록 설정 */
+
+  width: 40%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dailynoteleft {
+  width: 30%;
+  /* background-color: seagreen; */
+  height: 750px;
+}
+
+.leftright {
+  display: inline-flex;
+  position: relative;
+}
+  
+.TodoHeadBlock {
+  padding-top: 48px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.TodoHeadBlock h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #343a40;
+}
+
+.TodoHeadBlock .day {
+  margin-top: 4px;
+  color: #868e96;
+  font-size: 21px;
+}
+
+.TodoHeadBlock .tasks-left {
+  color: #456268;
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.InsertForm {
+  background: #f8f9fa;
+  padding-left: 32px;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 72px;
+
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.InsertFormPositioner {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.addbtn {
+  background: #456268;
+  
+
+  z-index: 5;
+  cursor: pointer;
+  width: 150px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%, 50%);
+  color: white;
+  border-radius: 40px;
+
+  border: none;
+  outline: none;
+
+
+  transition: 0.125s all ease-in;
+}
+
+.CircleButton :hover {
+  opacity: 0.5;
+}
+
+.Input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.inputNote {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  width: 80%;
+  height: 300px;
+  outline: none;
+  font-size: 18px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 .inputNoteTitle {
   text-align: left;
-  
+  /* background-color: rosybrown; */
+  width: 300px; 
   margin-left: 70px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
 }
   
-  .DailynoteScroll {
-    overflow: scroll;
-    margin-bottom: 160px; 
-    text-align: left;
-  }
-  
-  #ToDoSet {    
-    display: inline-flex;
-    text-align: left;
-    margin-bottom: 30px;
-  }  
-  
-  .checkbox {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border: 3px solid #456268;
-    position: relative;
-    top: 15px;
-    margin-left: 70px;
-    margin-right: 20px;
-  }
-  
-  
-  .EditButton {
-    color: #456268;
-    background-color: transparent;
-    width: 60px;
-    height: 60px;
-    font-size: 25px;
-    border: none;
-    outline: none;
-  
-    position: relative;
-    
-     
-  }
-  
-  .EditButton :hover {
-    opacity: 0.5;
-  }
-  
-  .deleteBtn{
-    background: transparent;
-    opacity: 1;
-    border: transparent; 
-    margin-right: 30px;
-  }
-  .deleteImg{
-    height: 20px;
-    width: 20px;
-    
-    
-  }
-  
-  .deleteBtn :hover{
-    opacity: 0.5;
-  }
-  
-  
-  
-  .ToDoContent {
-    width: 120px; 
-    margin-top: 10px;
-  }
+.DailynoteScroll {
+  /* overflow: scroll; */
+  margin-bottom: 160px; 
+  text-align: left;
+  float: right;
+  /* background-color: seagreen; */
+}
+
+#ToDoSet {    
+  display: inline-flex;
+  text-align: left;
+  margin-bottom: 30px;
+}  
+
+
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 3px solid #456268;
+  position: relative;
+  top: 15px;
+  margin-left: 70px;
+  margin-right: 20px;
+}
+
+
+.EditButton {
+  color: #456268;
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+
+  position: relative; 
+}
+
+.EditButton :hover {
+  opacity: 0.5;
+}
+
+.deleteBtn{
+  background: transparent;
+  opacity: 1;
+  border: transparent; 
+  margin-right: 30px;
+}
+.deleteImg{
+  height: 20px;
+  width: 20px; 
+}
+
+.deleteBtn :hover{
+  opacity: 0.5;
+}
+
+
+
+.ToDoContent {
+  width: 120px; 
+  margin-top: 10px;
+}
   
    
   
-  .CheckContent {
-    display: inline-flex;
-    position:relative;
-  }
-  
-  
-  .EditToDo {
-    position: relative;
-    top: +5px;   
-  
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #dee2e6;
-    width: 100px;
-    height: 50px;  
-    outline: none;
-    font-size: 13px;
-    box-sizing: border-box;
-    margin-left: 18px;
-  }
-  
-  .EditDelete {
-    /* background-color: yellow;   */
-    display: inline-flex;
-    position: relative;
-  }
-
-  .notes {
-      width: 50%;
-      height: 800px;
-      float: left;
-      background-color: #d0e8f2;
-      overflow: scroll;  /* 이거 확인  */
-
-     
-  }
+.CheckContent {
+  display: inline-flex;
+  position:relative;
+}
 
 
-/* .DailynoteScroll {
-  
-  margin-bottom: 160px; 
-  text-align: left;
-} */
+.EditToDo {
+  position: relative;
+  top: +5px;   
 
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  width: 100px;
+  height: 50px;  
+  outline: none;
+  font-size: 13px;
+  box-sizing: border-box;
+  margin-left: 18px;
+}
+
+.EditDelete {
+  /* background-color: yellow;   */
+  display: inline-flex;
+  position: relative;
+}
+
+.notes {
+  width: 90%;
+  height: 720px;
+  float: right; 
+  /* background-color: #d0e8f2; */
+  /* overflow: scroll;    */
+
+  overflow: scroll;
+  
+}
+ 
 
 .DailynoteHeadBlock {
   padding-top: 48px;
@@ -263,7 +267,7 @@
 
 .dailybox {
   background-color: white;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-left: 80px;
   margin-right: 80px;
   text-align: left;
@@ -273,6 +277,7 @@
   width: 600px;
   display: inline-flex;
   position: relative;
+  margin-top: 30px;
 }
 
 .valSubject {
@@ -307,34 +312,37 @@
   padding-left: 20px;
   /* background-color: plum; */
 }
-
-/* .subjectDate {
-  display: inline-flex;
-  position: relative;
-  background-color: #dee2e6;
-  margin-top: 20px;
-  font-size: 25px;
-  width: 30%;
-  
-}
-
-.valSubject {
-  width: 300px; 
-}
-
-.valDate { 
-}
-
-.content {
-  margin-left: 40px;
-  margin-top: 10px; 
-  font-size: 20px;
-  border: 2px solid #dee2e6;
-  width: 70%;
-} */
+ 
 
 .EditDeleteDaily {
   /* background-color: rosybrown; */
   float: right;
   margin-top: -40px;
+}
+
+.dailynoteTitle {
+  /* background-color: salmon; */
+  width: 300px;
+  margin-top: 80%;
+  font-size: 50px; 
+  margin-left: 140px;
+}
+
+.leftadd {
+  font-size: 30px;
+  width: 300px;
+  margin-top: 40px;
+  margin-left: 140px;
+  border: 1px solid #343a40;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.leftadd:hover {
+  opacity: 0.7;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
 }
