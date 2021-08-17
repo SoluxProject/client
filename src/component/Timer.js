@@ -6,7 +6,8 @@ import { VscDebugStart } from 'react-icons/vsc';
 import { AiOutlinePause } from 'react-icons/ai';
 import { VscDebugRestart } from 'react-icons/vsc';
 import { AiOutlineSave } from 'react-icons/ai';
-
+import { MdTimer } from 'react-icons/md';
+import { MdDateRange } from 'react-icons/md';
 
 function Timer() {
     const time = useRef(0);
@@ -84,7 +85,7 @@ function Timer() {
             </div>
             <div className = 'Timer'>
                 <div className = 'timer-set'>
-                    <h2 style={{color: 'white'}}>TIMER</h2>
+                    <div className='todayDate'>{date}</div>
                     <div className = 'time'>
                         {hr<10 ? `0${hr}` : hr} : {min<10 ? `0${min}` : min} : {sec<10 ? `0${sec}` : sec}
                     </div>
@@ -97,12 +98,12 @@ function Timer() {
                 </div>
                 <div className = 'dayRecord-set'>
                     <div className = 'dayRecord-bar'>
-                        <span>날짜</span>
-                        <span>기록</span>
+                        <div><MdDateRange /> 날짜</div>
+                        <div><MdTimer /> 기록</div>
                     </div>
                     <div className = 'dayRecord-list'>
-                        <span>{date}</span>
-                        <span>{recordDay}</span>
+                        <div>{date}</div>
+                        <div style={{color: 'rgb(230, 150, 2)'}}>{recordDay}</div>
                     </div>
                 </div>
             </div>

@@ -299,8 +299,8 @@ function Home() {
                           return (
                             <div key={index} className="rank__detail">
                               <div className="rank__name">
-                                <span>{val.timerWeekid}</span>
-                                <span id="rank_time">{hour<10 ? `0${hour}` : hour} : {minute<10 ? `0${minute}` : minute} : {second<10 ? `0${second}` : second}</span>
+                                <div>{val.timerWeekid}</div>
+                                <div style={{color: 'rgb(230, 150, 2)'}}>{hour<10 ? `0${hour}` : hour} : {minute<10 ? `0${minute}` : minute} : {second<10 ? `0${second}` : second}</div>
                               </div>
                               <div className="rank__bar">
                                 <div className="rank__value" style={style}></div>

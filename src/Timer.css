@@ -13,27 +13,28 @@
     padding: 40px;
     padding-top: 20px;
     background-color: #456268;
-    background: linear-gradient( to right, #5d8c96, #25383a );
+    background: linear-gradient( to right, #5d8c96, #203133 );
+}
+.todayDate {
+    color: white;
+    font-size: 30px;
 }
 .dayRecord-set {
-    text-align: left;
-    width: 70%;
+    width: 40%;
 }
-.dayRecord-bar {
+.dayRecord-bar, .dayRecord-list {
     border-bottom: 1.5px solid #456268;
     padding: 8px;
-    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
-.dayRecord-list {
-    border-bottom: 1.5px solid #456268;
-    padding: 8px;
-    padding-left: 20px;
+.dayRecord-bar > div {
+    color: grey;
 }
-.dayRecord-bar > span {
-    margin: 61px;
-}
-.dayRecord-list > span {
-    margin: 40px;
+.dayRecord-list > div {
+    font-weight: bold;
 }
 .time {
     margin: 15px 0px;

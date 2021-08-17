@@ -12,30 +12,28 @@
   flex-direction: column;
 }
 .DdayInput  {
-  padding: 12px;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #dee2e6;
-  width: 70%;
+  width: 60%;
   outline: none;
   font-size: 18px;
-  margin-left: 45px;
+  margin-left: 40px;
 }
-#InputYear {
-  width: 20%;
-}
+
 .InputDay{
-  padding: 12px;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #dee2e6;
-  width: 15%;
+  width: 50%;
   outline: none;
   font-size: 18px;
-  margin-left: 10px;
 }
 
 .DdayInsertForm {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   background: #f8f9fa;
   padding-left: 32px;
@@ -83,25 +81,39 @@ h3{
 
 .EditDday{
   padding: 5px;
-  width: 35px;
-  height: 35px;
+  width: 25%;
   margin-left: 5px;
   border-radius: 4px;
   border: 1px solid #dee2e6;
   outline: none;
+  font-size: 12px;
 }
-#EditYear{
-  width: 50px;
-}
+
 .EditDdayContent{
   padding: 5px;
-  height: 35px;
-  width:180px;
-  margin-left: 15px;
+  width:25%;
+  margin-left: 25px;
   border-radius: 4px;
   border: 1px solid #dee2e6;
   outline: none;
+  font-size: 12px;
 }
+
+#close {
+  color: #456268;
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#close :hover {
+  opacity: 0.5;
+}
+
 .DdayScroll {
   overflow: scroll;
   margin-bottom: 160px; 
@@ -138,6 +150,7 @@ h3{
   border: none;
   outline: none;
   position: relative;
+  cursor: pointer;
 }
 
 .DdayEditButton :hover {
@@ -151,7 +164,7 @@ h3{
   background: transparent;
   opacity: 1;
   border: transparent; 
-  
+  cursor: pointer;
 }
 .DdaydeleteImg{
   height: 20px;
