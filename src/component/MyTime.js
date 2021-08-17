@@ -2,6 +2,7 @@ import '../MyTime.css';
 import React, {useState, useEffect} from 'react';
 import Axios from "axios";
 import MyPageNavbar from './MyPageNavbar';
+import {Link} from 'react-router-dom';
 
 export default function MyTime ({location}){
    
@@ -68,7 +69,9 @@ export default function MyTime ({location}){
                 </div>
             </div>
             <div className="ExamBtn">
+                <Link to='/timer'>
                 <button className="TimerBtn">Timer</button>
+                </Link>
             </div>
             
             
