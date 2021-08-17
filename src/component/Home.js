@@ -113,8 +113,9 @@ function Home() {
 
     return (
         <div className="Home">
+
               <section id="header-nav">
-                <div className="container column">
+                <div className="container_column">
                   <header className="container">
                     {ddayExist ?
                       (
@@ -229,6 +230,12 @@ function Home() {
                 </div>
               </section>
 
+              <section className="introSection"> 
+                    <img src="../img/sweetme_logo.png" alt="Sweet Me" width="700" height="500"></img>
+              </section>
+
+
+
               <section id="summary" className="section">
                 <div className="section__container">
                   <div className="summary__set">
@@ -253,25 +260,6 @@ function Home() {
                         })} 
                       </div>
 
-                      {/* <div className="study__note">
-                        <p>7월 11일 | 알고리즘</p>
-                        <p>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                          Atque blanditiis temporibus quisquam cupiditate quam amet
-                          velit excepturi deleniti, accusamus laboriosam placeat, natus
-                          sit! Suscipit, vero! Saepe totam molestias harum. Tempore.{" "}
-                        </p>
-                      </div>
-                      <div className="study__note">
-                        <p>7월 11일 | 알고리즘</p>
-                        <p>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                          Atque blanditiis temporibus quisquam cupiditate quam amet
-                          velit excepturi deleniti, accusamus laboriosam placeat, natus
-                          sit! Suscipit, vero! Saepe totam molestias harum. Tempore.{" "}
-                        </p>
-                      </div> */}
-                       
                     </div>
                     <div className="summary__right">
                       <h1>[오늘의 할일]</h1>

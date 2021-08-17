@@ -41,7 +41,7 @@
 }
 
 .container {
-  display: flex;
+  display: flex; 
 }
 .item {
   display: flex;
@@ -50,6 +50,9 @@
 .column {
   flex-direction: column;
 }
+
+
+
 header {
   padding: 10px;
   background-color: #456268;
@@ -154,7 +157,8 @@ body {
   padding: 50px;
   text-align: center;
   margin: auto;
-  position: static;
+  position: static; 
+  display: grid;
 }
 
 .section__container {
@@ -374,4 +378,32 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 8px;
+}
+/* 
+.header-nav {
+  position: fixed;
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+}
+
+.containerMenu {
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+} */
+/* 
+nav { 
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+} */
+
+.introSection {
+  background-color:  #ffffff;
+  /* opacity: 0.7; */
+  height: 640px;
+  padding-top: 50px;
 }
