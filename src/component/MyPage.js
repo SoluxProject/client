@@ -68,7 +68,14 @@ export default function MyPage(){
                         }}>
                         <button className="MyPageBtn MyPageExamBtn">시험일정 관리</button>
                     </Link>
-                    <button className="MyPageBtn MyPageTimeBtn">공부시간 관리</button>
+                    <Link to={{
+                        pathname:"/mytime",
+                        state: {
+                            id:user.id
+                        }
+                        }}>
+                        <button className="MyPageBtn MyPageTimeBtn">공부시간 관리</button>
+                    </Link>
                 </div>
             </div>
         </div>
