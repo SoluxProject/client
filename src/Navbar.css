@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 .nav-bar {
     background-color: #456268;
@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    
 }
 .menu-list {
     background-color: #456268;
@@ -20,7 +21,7 @@
     transform: translateX(0);
     transition: all 0.8s ease 0s;
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden; 
 }
 ul li {
     margin: 0px 70px;
