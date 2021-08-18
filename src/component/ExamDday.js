@@ -131,7 +131,7 @@ export default function ExamDday({location}){
     return(
     <div className="wrapper">
         <div className="MyPageNavbar">
-            <MyPageNavbar></MyPageNavbar>
+            <MyPageNavbar page="examdday"></MyPageNavbar>
         </div>
         <div className="ExamDday">
             <div className="ExamDdayHeadBlock">
