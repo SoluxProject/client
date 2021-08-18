@@ -86,7 +86,7 @@ export default function EditMyPage({location}){
     return(
         <div className="EditMyPage">
             
-            <MyPageNavbar></MyPageNavbar>
+            <MyPageNavbar page="editmypage"></MyPageNavbar>
             <div className="EditMyPageMainContent">
             <div className="EditMyPageTitle">
                     <h1>회원정보 수정</h1>

@@ -51,7 +51,7 @@ export default function MyTime ({location}){
     return(
         <div className="MyTime">
             <div className="MyPageNavbar">
-            <MyPageNavbar></MyPageNavbar>
+            <MyPageNavbar page="mytime"></MyPageNavbar>
             </div>
             <div className="MyTimeTitle">나의 공부 시간</div>
             <div className="MyTimeMain">

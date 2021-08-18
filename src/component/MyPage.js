@@ -3,6 +3,7 @@ import Navbr from "./Navbar";
 import React , {useState, useEffect} from 'react';
 import Axios from 'axios';
 import {Link} from 'react-router-dom';
+import MyPageNavbar from "./MyPageNavbar";
 
 export default function MyPage(){
     const [user,setUser]=useState([]);
@@ -18,7 +19,7 @@ export default function MyPage(){
     return(
         <div className="MyPage">
             <div className="MyPageNavbar">
-                    <Navbr page="MyPage"></Navbr>
+                    <MyPageNavbar page="mypage"></MyPageNavbar>
             </div>
             <div className="MyPageContent">
                 <div className="MyPageTitle">

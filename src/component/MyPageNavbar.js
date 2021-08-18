@@ -3,14 +3,28 @@ import { BsChevronDoubleLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import '../Navbar.css';
 
-export default function MyPageNavbar(){
+export default function MyPageNavbar(props){
+    const thisPage = props.page;
 
     return(
         <div className="nav-bar">
                 <div className="menu-toggle">
-                    <Link to="/mypage">
+                {(thisPage === "mypage") &&
+                    (
+                        <Link to="/">
                         <BsChevronDoubleLeft style={{color: 'white', width: '1.5rem', height: '1.5rem'}} />
-                    </Link>
+                        </Link>
+                    )
+
+                }
+                {(thisPage !== "mypage") &&
+                    (
+                        <Link to="/mypage">
+                        <BsChevronDoubleLeft style={{color: 'white', width: '1.5rem', height: '1.5rem'}} />
+                        </Link>
+                    )
+
+                }
                 </div>
                
             </div>
