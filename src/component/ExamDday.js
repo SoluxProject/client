@@ -11,10 +11,7 @@ export default function ExamDday({location}){
     
     const id=location.state.id;
 
-    const [valmonth, setValmonth] = useState('');
-    const [valday, setValday] = useState('');
-    const [valexam, setValexam] = useState('');
-
+    
     const [month, setMonth] = useState('');
     const [date, setDate] = useState('');
     const [exam,setExam]=useState('');
@@ -168,6 +165,7 @@ export default function ExamDday({location}){
                                 {isEdit && (index === val.index) && 
                                     (
                                         <div className="Examchild">
+            
                                             <input className="EditDday" id="EditExamMonth" placeholder="월" onChange = {(e) => {setNewMonth(Number(e.target.value))}} />
                                             <input className="EditDday" id="EditExamDay" placeholder="일" onChange = {(e) => {setNewDate(Number(e.target.value))}} />
                                             <button className="DdayEditButton" onClick={()=>changeExamDate(val.index)}>
