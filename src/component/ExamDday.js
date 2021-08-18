@@ -11,8 +11,12 @@ export default function ExamDday({location}){
     
     const id=location.state.id;
 
-    const [month, setMonth] = useState(0);
-    const [date, setDate] = useState(0);
+    const [valmonth, setValmonth] = useState('');
+    const [valday, setValday] = useState('');
+    const [valexam, setValexam] = useState('');
+
+    const [month, setMonth] = useState('');
+    const [date, setDate] = useState('');
     const [exam,setExam]=useState('');
     const [year, setYear]=useState(2021);
 
@@ -33,27 +37,25 @@ export default function ExamDday({location}){
     }, []);
 
     const showExamList = (res)=>{
-        if(res.data.success===undefined) {
             setExamListExist(true);
+            console.log(res.data);
             setExamList(res.data);
-        }
-        else {
-            setExamListExist(false);
-            alert(res.data.message);
-        }
     }
 
     const submitExam = ()=>{
+        console.log("submit");
         axios.post("/manage/insert",{
             manageid:id,
             date: new Date(year, month-1, date+1),
             subject: exam
         })
-        .then(()=>{
-            setMonth(0);
-            setDate(0);
+        .then((res)=>{
+            setMonth('');
+            setDate('');
             setExam('');
+            showExamList(res);
          })
+        
     }
     const calcMonth =(date) =>{
         var date = new Date(Date.parse(date));
@@ -139,12 +141,12 @@ export default function ExamDday({location}){
             </div>
         <div className="InsertFormPositioner">
           <div className="InsertForm ExamInsertForm">
-            <input className="ExamInputDay" id="InputMonth" placeholder="월" onChange = {(e) => {setMonth(Number(e.target.value))}} />
-            <input className="ExamInputDay" id="InputDate" placeholder="일" onChange = {(e) => {setDate(Number(e.target.value))}}/>
-            <input className="ExamDdayInput" placeholder="시험" onChange = {(e) => {setExam(e.target.value)}}/>
+            <input className="ExamInputDay" id="InputMonth" autoFocus placeholder="월" value={month} onChange = {(e) => {setMonth(Number(e.target.value))}} />
+            <input className="ExamInputDay" id="InputDate" autoFocus placeholder="일" value={date} onChange = {(e) => {setDate(Number(e.target.value))}}/>
+            <input className="ExamDdayInput" autoFocus placeholder="시험" value={exam} onChange = {(e) => {setExam(e.target.value)}}/>
           </div>
         </div>
-        <button className="CircleButton" onClick={()=>submitExam} >
+        <button className="CircleButton" onClick={submitExam} >
           <MdAdd />
         </button>
         {examListExist ? 

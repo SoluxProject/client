@@ -121,7 +121,13 @@
     opacity: 0.5;
   }
   #EditExamDay{
-
+    width: 60px;
+  }
+  #EditExamMonth{
+    width: 60px;
+  }
+  .EditDdayContent{
+    width: 150px;
   }
   .Examchild{
     display: flex;
