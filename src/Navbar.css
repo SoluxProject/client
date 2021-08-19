@@ -43,5 +43,5 @@ ul li {
     text-align: center;
     align-items: center;
     transition: all 0.8s ease 0s;
-    transform:translateX(20%);
+    transform:translateX(50%);
 }
