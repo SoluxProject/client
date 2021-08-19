@@ -235,7 +235,7 @@ function Home() {
                 <div className="section__container">
                   <div className="summary__set">
                     <div className="summary__left">
-                      <h1>[Study Note]</h1>
+                      <h1>[Daily Note]</h1>
 
                       <div className="homeNotes">
                         {dailynoteList.map((val) => {
