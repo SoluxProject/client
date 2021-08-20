@@ -33,6 +33,7 @@
     border-right: 1.4px solid #FCF8EC;
     background-color: #456268;
     color: white;
+    cursor: pointer;
 }
 .menu-box:hover {
     opacity: 82%;
@@ -55,15 +56,34 @@
     color: #456268;
 }
 .inquiry-input {
-    /* border: 2px solid red; */
     padding: 5px;
     margin-bottom: 20px;
     width: 60%;
+    height: 3rem;
     font-size:1.25rem;
     font-weight: 400;
     background-color: #fff;
     border-radius: 10px;
     border: none;
+}
+.inquiry-input-pw {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+#newPw {
+    padding: 5px;
+    width: 80%;
+    font-size:1.25rem;
+    font-weight: 400;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+#pwIcon {
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
 }
 .inquiry-submit {
     color:#FCF8EC;
