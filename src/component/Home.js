@@ -228,9 +228,17 @@ function Home() {
                 </div>
               </section>
 
-              <section className="introSection"> 
+              {isLoggedIn ? 
+                (
+                  <div></div>
+                ) :
+                (
+                  <section className="introSection"> 
                     <img src="../img/sweetme_logo.png" alt="Sweet Me" width="700" height="500"></img>
-              </section>
+                  </section>
+                )
+              }
+              
 
 
 
