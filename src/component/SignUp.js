@@ -56,7 +56,7 @@ function SignUp() {
                        
                     </div> 
                     <div className="signup-form-floating signup-mb-3">
-                        <input className="input-signup" id="pw" type="text" placeholder="PW" onChange={(e) => {
+                        <input className="input-signup" id="pw" type="password" placeholder="PW" onChange={(e) => {
                           setPw(e.target.value);
                         }}/>
                         

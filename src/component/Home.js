@@ -157,6 +157,9 @@ function Home() {
                         }
                     </div>
                   </header>
+                  <div style={{height: '6px', backgroundColor: '#6B7275'}} />
+                  <div style={{height: '6px', backgroundColor: '#98A6A6'}} />
+                  <div style={{height: '6px', backgroundColor: '#CDD5D3'}} />
                   <nav className="container">
                     {isLoggedIn ? 
                       (
@@ -235,7 +238,7 @@ function Home() {
                 <div className="section__container">
                   <div className="summary__set">
                     <div className="summary__left">
-                      <h1>[Daily Note]</h1>
+                      <h1>[Study Note]</h1>
 
                       <div className="homeNotes">
                         {dailynoteList.map((val) => {

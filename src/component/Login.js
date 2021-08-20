@@ -47,7 +47,7 @@ return (
                         />
                       </div>
                       <div className="form-floating mb-3">
-                        <input className="input-login" id="pw" type="text" data-sb-validations="required,email" placeholder="PW"
+                        <input className="input-login" id="pw" type="password" data-sb-validations="required,email" placeholder="PW"
                         onChange={(e) => {
                           setPw(e.target.value);
                         }}
