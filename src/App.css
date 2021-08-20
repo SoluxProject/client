@@ -124,23 +124,30 @@ header > div {
   color: white;
 }
 nav {
-  background-color: #D0E8F2;
-  padding:10px 0px;
+  background-color: #EAE9E7;
+  padding: 0;
   margin: 0;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 nav .item {
-  border-radius: 5px;
-  background-color: #456268;
-  padding: 8px;
-  width: 250px;
+  /* border-radius: 5px; */
+  background-color: #EAE9E7;
+  padding: 12px;
+  width: 280px;
   justify-content: center;
+  cursor: pointer;
+}
+nav .item:hover {
+  background-color: #ffffff;
+  border-left: 1px solid #456268;
+  border-right: 1px solid #456268;
+  transition: all 0.5s ease 0s;
 }
 nav > a {
   text-decoration: none;
   font-size: 20px;
-  color: white;
+  color: #456268;
 }
 nav h4 {
   margin: 0;
