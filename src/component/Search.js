@@ -2,6 +2,8 @@ import '../Search.css';
 import React, {useState} from 'react';
 import Axios from "axios";
 import {Link} from 'react-router-dom';
+import { AiOutlineEye } from 'react-icons/ai';
+import { AiOutlineEyeInvisible } from 'react-icons/ai';
 
 function Search() {
     const [menu, setMenu] = useState('id');
@@ -17,6 +19,8 @@ function Search() {
 
     const [idDone, setIdDone] = useState(false);
     const [pwDone, setPwDone] = useState(false);
+
+    const [isShown, setIsShown] = useState(false);
     
     const clearInput = () => {
         var e = document.getElementsByClassName('inquiry-input');
@@ -69,8 +73,8 @@ function Search() {
                 <div className="header-line"></div>
             </div>
             <div className="inquiry-menu">
-                <div className="menu-box" id={menu==='id' ? 'color':'none'} onClick={()=>{setMenu('id'); setIdDone(false); setPwDone(false); clearInput();}}>아이디 찾기</div>
-                <div className="menu-box" id={menu==='pw' ? 'color':'none'} onClick={()=>{setMenu('pw'); setIdDone(false); setPwDone(false); clearInput();}} style={{border:'none'}}>비밀번호 찾기</div>
+                <div className="menu-box" id={menu==='id' ? 'color':'none'} onClick={()=>{setMenu('id'); setIdDone(false); setPwDone(false); setIsShown(false); clearInput();}}>아이디 찾기</div>
+                <div className="menu-box" id={menu==='pw' ? 'color':'none'} onClick={()=>{setMenu('pw'); setIdDone(false); setPwDone(false); setIsShown(false); clearInput();}} style={{border:'none'}}>비밀번호 찾기</div>
             </div>
             
             {menu==='id' ?
@@ -86,7 +90,15 @@ function Search() {
                 <h4>아이디, 이름과 수정할 비밀번호를 입력하세요.</h4>
                 <input className="inquiry-input" id="id" type="text" onChange={e => {setId(e.target.value)}} placeholder="ID" />
                 <input className="inquiry-input" id="name" type="text" onChange={e => {setName2(e.target.value)}} placeholder="이름" />
-                <input className="inquiry-input" id="pw" type="password" onChange={e => {setNewPw(e.target.value)}} placeholder="PW" />
+                <div className="inquiry-input inquiry-input-pw" >
+                    <input id="newPw" type={isShown ? "text" : "password"} onChange={e => {setNewPw(e.target.value)}} placeholder="PW" />
+                    <div id="pwIcon">
+                        {isShown ?
+                            (<AiOutlineEye style={{fontSize: '25px'}} onClick={()=>{setIsShown(!isShown)}} />) :
+                            (<AiOutlineEyeInvisible style={{fontSize: '25px'}} onClick={()=>{setIsShown(!isShown)}} />)
+                        }
+                    </div>
+                </div>
                 <button className="inquiry-submit" type="submit" onClick={pwInquiry}>제출</button>
             </div>
             )}

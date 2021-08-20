@@ -50,6 +50,27 @@ h2, .h2 {
   .signup-mb-3 {
     margin-bottom: 1rem !important;
   }
+  .input-pw {
+    background-color: #fff;
+    border-bottom: 0.5rem solid #ced4da;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #signup-pw {
+    width: 90%;
+    border:none;
+    border-right:0px; 
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;
+  }
+  #chkIcon {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px;
+  }
   .signup-form-floating {
     position: relative;
     border-width: 1px;

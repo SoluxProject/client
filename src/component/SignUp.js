@@ -3,6 +3,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
+import { AiOutlineEye } from 'react-icons/ai';
+import { AiOutlineEyeInvisible } from 'react-icons/ai';
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -11,6 +13,7 @@ function SignUp() {
   const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
   const [major, setMajor] = useState('');
+  const [isShown, setIsShown] = useState(false);
 
   const submitSignUp = () => {
     Axios.post('join', {
@@ -55,10 +58,16 @@ function SignUp() {
                         }}/>
                        
                     </div> 
-                    <div className="signup-form-floating signup-mb-3">
-                        <input className="input-signup" id="pw" type="password" placeholder="PW" onChange={(e) => {
+                    <div className="signup-form-floating signup-mb-3 input-pw">
+                        <input className="input-signup" id="signup-pw" type={isShown ? "text" : "password"} placeholder="PW" onChange={(e) => {
                           setPw(e.target.value);
                         }}/>
+                        <div id="chkIcon">
+                          {isShown ? 
+                            (<AiOutlineEye style={{fontSize: '30px'}} onClick={()=>{setIsShown(!isShown)}}/>) :
+                            (<AiOutlineEyeInvisible style={{fontSize: '30px'}} onClick={()=>{setIsShown(!isShown)}}/>)
+                          }
+                        </div>
                         
                     </div>
                     <div className="signup-form-floating signup-mb-3">
