@@ -411,7 +411,8 @@ nav {
 } */
 
 .introSection {
-  background-color:  #ffffff;
+  /* background-color:  #ffffff; */
+  background-color: var(--color-beige);
   /* opacity: 0.7; */
   height: 640px;
   padding-top: 50px;
